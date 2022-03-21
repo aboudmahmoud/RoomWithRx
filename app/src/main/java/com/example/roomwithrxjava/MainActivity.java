@@ -38,7 +38,7 @@ ActivityMainBinding binding;
                 System.out.println("Aboud"+binding.EditTitle.getText().toString());
                 Log.d("aboud", "onClick: ");
                 postDatabase.postDao()
-                        .insertPost(new Post(1,binding.EditTitle.getText().toString(),binding.Editboy.getText().toString()))
+                        .insertPost(new Post(new User(1,"Aboud"),binding.EditTitle.getText().toString(),binding.Editboy.getText().toString()))
                         .subscribeOn(Schedulers.computation())
                         .subscribe(new CompletableObserver() {
                             @Override

@@ -7,13 +7,12 @@ import androidx.room.PrimaryKey;
 public class Post {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private  int userId;
+    private  User user;
     private String title;
     private  String body;
 
-
-    public Post( int userId, String title, String body) {
-        this.userId = userId;
+    public Post(User user, String title, String body) {
+        this.user = user;
         this.title = title;
         this.body = body;
     }
@@ -26,12 +25,12 @@ public class Post {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTitle() {
